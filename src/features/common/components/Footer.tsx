@@ -27,9 +27,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-4 group">
               <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:scale-110 transition-transform">
-                <img 
-                  src="/logo.jpeg" 
-                  alt="Noor Booth Logo" 
+                <img
+                  src="/logo.jpeg"
+                  alt="Noor Booth Logo"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -78,7 +78,7 @@ export default function Footer() {
               </a>
               <span className="flex items-center gap-2 text-sm">
                 <MapPin className="w-4 h-4 shrink-0" />
-                Jakarta, Indonesia
+                Bogor, Indonesia
               </span>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function Footer() {
               aria-label="Instagram"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
-                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8,0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8,0 0,1 7.8,2M7.6,4A3.6,3.6,0 0,0 4,7.6V16.4A3.6,3.6,0 0,1 7.6,20H16.4A3.6,3.6,0 0,1 20,16.4V7.6A3.6,3.6,0 0,1 16.4,4H7.6M17.8,9A1,1,0 0,1 17.8,11A1,1,0 0,1 16.8,11A1,1,0 0,1 15.8,10A1,1,0 0,1 15.8,8A1,1,0 0,1 16.8,8A1,1,0 0,1 17.8,9M9,12.6A2.6,2.6,0 1,1 11.6,15.2A2.7,2.7,0 0,1 9,12.6Z"/>
+                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8,0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8,0 0,1 7.8,2M7.6,4A3.6,3.6,0 0,0 4,7.6V16.4A3.6,3.6,0 0,1 7.6,20H16.4A3.6,3.6,0 0,1 20,16.4V7.6A3.6,3.6,0 0,1 16.4,4H7.6M17.8,9A1,1,0 0,1 17.8,11A1,1,0 0,1 16.8,11A1,1,0 0,1 15.8,10A1,1,0 0,1 15.8,8A1,1,0 0,1 16.8,8A1,1,0 0,1 17.8,9M9,12.6A2.6,2.6,0 1,1 11.6,15.2A2.7,2.7,0 0,1 9,12.6Z" />
               </svg>
             </a>
           </div>
