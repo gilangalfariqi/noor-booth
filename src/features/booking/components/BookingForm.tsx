@@ -85,18 +85,18 @@ const onSubmit = async (data: BookingInput) => {
             className="text-2xl font-semibold text-foreground"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Booking Received!
+            Booking Berhasil Terkirim!
           </h3>
           <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-            Thank you! We&apos;ve received your booking request and will reach out
-            within 24 hours to confirm your session.
+            Terima kasih! Kami telah menerima permintaan booking Anda dan akan segera menghubungi Anda
+            dalam waktu 24 jam untuk konfirmasi jadwal.
           </p>
           <Button
             variant="outline"
             onClick={() => setSubmitted(false)}
             className="mt-2"
           >
-            Book Another Session
+            Booking Lagi
           </Button>
         </motion.div>
       ) : (
@@ -111,11 +111,11 @@ const onSubmit = async (data: BookingInput) => {
           {/* Name */}
           <div className="space-y-1.5">
             <Label htmlFor="name">
-              Full Name <span className="text-destructive">*</span>
+              Nama Lengkap <span className="text-destructive">*</span>
             </Label>
             <Input
               id="name"
-              placeholder="e.g. Sarah & James Wilson"
+              placeholder="Contoh: Sarah & James Wilson"
               {...register('name')}
               aria-invalid={!!errors.name}
             />
@@ -127,7 +127,7 @@ const onSubmit = async (data: BookingInput) => {
           {/* Date */}
           <div className="space-y-1.5">
             <Label htmlFor="date">
-              Session Date <span className="text-destructive">*</span>
+              Tanggal Event <span className="text-destructive">*</span>
             </Label>
             <div className="relative">
               <Input
@@ -148,14 +148,14 @@ const onSubmit = async (data: BookingInput) => {
           {/* Package */}
           <div className="space-y-1.5">
             <Label htmlFor="package">
-              Photography Package <span className="text-destructive">*</span>
+              Pilih Paket Photobooth <span className="text-destructive">*</span>
             </Label>
             <Select
               value={selectedPackage}
               onValueChange={(val) => setValue('package', val!, { shouldValidate: true })}
             >
               <SelectTrigger id="package" aria-invalid={!!errors.package}>
-                <SelectValue placeholder="Select a package..." />
+                <SelectValue placeholder="Pilih paket..." />
               </SelectTrigger>
               <SelectContent>
                   {packages.length > 0 ? (
@@ -181,12 +181,12 @@ const onSubmit = async (data: BookingInput) => {
           {/* Notes */}
           <div className="space-y-1.5">
             <Label htmlFor="notes">
-              Notes / Special Requests{' '}
-              <span className="text-muted-foreground text-xs">(optional)</span>
+              Catatan / Permintaan Khusus{' '}
+              <span className="text-muted-foreground text-xs">(opsional)</span>
             </Label>
             <Textarea
               id="notes"
-              placeholder="Tell us about your vision, location preferences, special requirements..."
+              placeholder="Ceritakan tentang tema acara, lokasi, atau permintaan khusus lainnya..."
               rows={4}
               {...register('notes')}
               aria-invalid={!!errors.notes}
@@ -205,15 +205,15 @@ const onSubmit = async (data: BookingInput) => {
             {submitting ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Sending Request...
+                Mengirim Permintaan...
               </>
             ) : (
-              'Submit Booking Request'
+              'Kirim Permintaan Booking'
             )}
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">
-            We&apos;ll confirm your session within 24 hours. No payment required now.
+            Kami akan konfirmasi dalam 24 jam. Belum ada pembayaran saat ini.
           </p>
         </motion.form>
       )}

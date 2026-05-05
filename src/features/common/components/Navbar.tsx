@@ -10,8 +10,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/portfolio', label: 'Gallery Event' },
+  { href: '/pricing', label: 'Paket Harga' },
 ];
 
 export default function Navbar() {
@@ -71,8 +71,8 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button size="sm" className="hidden md:inline-flex">
-              <Link href="/booking" className="w-full">Book a Session</Link>
+            <Button size="sm" className="hidden md:inline-flex font-bold">
+              <Link href="/booking" className="w-full px-4">Booking Sekarang</Link>
             </Button>
             <button
               className="md:hidden p-2 rounded-md text-foreground hover:bg-muted transition-colors"
@@ -114,8 +114,8 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button size="sm" className="mt-2 w-full">
-                <Link href="/booking" className="w-full block">Book a Session</Link>
+              <Button size="sm" className="mt-2 w-full font-bold">
+                <Link href="/booking" className="w-full block">Booking Sekarang</Link>
               </Button>
             </div>
           </motion.div>

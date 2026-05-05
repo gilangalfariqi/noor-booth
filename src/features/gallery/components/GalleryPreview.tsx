@@ -61,13 +61,13 @@ export default function GalleryPreview() {
         >
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">
-              Our Work
+              Gallery
             </p>
             <h2
               className="text-heading text-3xl md:text-4xl text-foreground"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Selected Moments
+              Keseruan di Setiap Event
             </h2>
           </div>
 

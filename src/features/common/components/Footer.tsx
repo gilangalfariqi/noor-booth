@@ -6,8 +6,8 @@ import { Camera, Mail, Phone, MapPin } from "lucide-react";
 const footerLinks = {
   Pages: [
     { href: "/", label: "Home" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/pricing", label: "Pricing" },
+    { href: "/portfolio", label: "Gallery Event" },
+    { href: "/pricing", label: "Paket Harga" },
     { href: "/booking", label: "Booking" },
   ],
   Services: [
@@ -36,8 +36,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-[#A8896C] max-w-xs mb-6">
-              Capturing life&apos;s most precious moments with artistry and passion.
-              Every frame tells your unique story.
+              Membangun pengalaman photobooth yang seru dan merchandise custom berkualitas untuk setiap momen spesial Anda.
             </p>
             {/* Contact */}
             <div className="flex flex-col gap-2">
