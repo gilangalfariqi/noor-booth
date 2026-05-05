@@ -1,8 +1,8 @@
-# Photobin - Professional Photography Studio 🚀
+# noor-booth - Professional Photography Studio 🚀
 
 Production-ready Next.js 16 photography booking website with Supabase backend.
 
-[![Vercel](https://thereadme.com/project-status/Deploy%20with%20Vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/photobin&env=NEXT_PUBLIC_SUPABASE_URL&env=NEXT_PUBLIC_SUPABASE_ANON_KEY&env=ADMIN_SECRET&project-name=photobin&repository-name=photobin)
+[![Vercel](https://thereadme.com/project-status/Deploy%20with%20Vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/noor-booth&env=NEXT_PUBLIC_SUPABASE_URL&env=NEXT_PUBLIC_SUPABASE_ANON_KEY&env=ADMIN_SECRET&project-name=noor-booth&repository-name=noor-booth)
 
 ## ✨ Features
 
@@ -98,7 +98,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000)
 
 **Admin:** [http://localhost:3000/admin](http://localhost:3000/admin)  
-**Password:** `admin123` (change `ADMIN_SECRET` in `.env.local`)
+**Password:** `` (change `ADMIN_SECRET` in `.env.local`)
 
 ### 5. Deploy to Vercel (Free!)
 1. Push to GitHub
@@ -117,7 +117,7 @@ Open [http://localhost:3000](http://localhost:3000)
 | `/admin` | Auth + tabs: Bookings/Packages/Images/Settings |
 
 ## 🔐 Admin Password
-Default: `admin123`  
+Default: ``  
 Change `ADMIN_SECRET=your-secret` in `.env.local` or Vercel dashboard.
 
 ## 🗄 Database Schema
@@ -141,9 +141,6 @@ npm run lint
 - [ ] Admin password changed
 - [ ] Custom domain (Vercel)
 - [ ] Analytics (Vercel)
-
-## 🙌 Credits
-Built by [BLACKBOXAI](https://blackbox.ai) - Fullstack AI engineer.
 
 ---
 
