@@ -29,8 +29,8 @@ Deployment: Vercel (free tier)
 
 ### 1. Clone & Install
 ```bash
-git clone <your-repo> photobin
-cd photobin
+git clone <your-repo> noor-booth
+cd noor-booth
 npm install
 ```
 
@@ -145,5 +145,5 @@ npm run lint
 ---
 
 ⭐ **Star on GitHub if helpful!**  
-📢 **Deploy in 5 mins →** [Vercel](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/photobin)
+📢 **Deploy in 5 mins →** [Vercel](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/noor-booth)
 
