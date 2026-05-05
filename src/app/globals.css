@@ -1,26 +1,175 @@
+/* ─── Font Imports ─────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap");
+
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
+/* ─── Theme Tokens ──────────────────────────────────────────────────────────── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  /* Brand color tokens */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-warm-light: var(--brand-warm-light);
+  --color-brand-muted: var(--brand-muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Light Theme ─────────────────────────────────────────────────────────── */
+:root {
+  /* Shadcn semantic tokens — warm photography palette */
+  --background: oklch(0.99 0.006 85);       /* Warm Cream #FDFAF7 */
+  --foreground: oklch(0.14 0.025 54);        /* Near Black Brown #1C1410 */
+  --card: oklch(0.97 0.009 75);             /* Soft Warm White #FBF6F0 */
+  --card-foreground: oklch(0.14 0.025 54);
+  --popover: oklch(0.99 0.006 85);
+  --popover-foreground: oklch(0.14 0.025 54);
+  --primary: oklch(0.52 0.13 54);           /* Burnt Caramel #C46210 */
+  --primary-foreground: oklch(0.99 0.006 85);
+  --secondary: oklch(0.93 0.04 68);         /* Warm Light */
+  --secondary-foreground: oklch(0.30 0.04 54);
+  --muted: oklch(0.93 0.03 68);
+  --muted-foreground: oklch(0.50 0.04 54);  /* Warm Sand mid-tone */
+  --accent: oklch(0.68 0.10 58);            /* Golden Apricot #E09540 */
+  --accent-foreground: oklch(0.14 0.025 54);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.87 0.04 68);            /* Warm Border #E0C9B4 */
+  --input: oklch(0.87 0.04 68);
+  --ring: oklch(0.52 0.13 54);
+  --radius: 0.625rem;
+  /* Sidebar */
+  --sidebar: oklch(0.97 0.009 75);
+  --sidebar-foreground: oklch(0.14 0.025 54);
+  --sidebar-primary: oklch(0.52 0.13 54);
+  --sidebar-primary-foreground: oklch(0.99 0.006 85);
+  --sidebar-accent: oklch(0.93 0.04 68);
+  --sidebar-accent-foreground: oklch(0.30 0.04 54);
+  --sidebar-border: oklch(0.87 0.04 68);
+  --sidebar-ring: oklch(0.52 0.13 54);
+  /* Custom brand vars (raw hex for use in inline styles / gradients) */
+  --brand-primary: #C46210;
+  --brand-accent: #E09540;
+  --brand-dark: #4B3621;
+  --brand-cream: #FDFAF7;
+  --brand-warm-light: #FBE4D1;
+  --brand-muted: #D4B896;
+  /* Font family vars (set by next/font) */
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+/* ─── Dark Theme ──────────────────────────────────────────────────────────── */
+.dark {
+  --background: oklch(0.12 0.025 54);       /* Very dark walnut */
+  --foreground: oklch(0.96 0.01 75);        /* Warm white */
+  --card: oklch(0.17 0.025 54);
+  --card-foreground: oklch(0.96 0.01 75);
+  --popover: oklch(0.17 0.025 54);
+  --popover-foreground: oklch(0.96 0.01 75);
+  --primary: oklch(0.68 0.10 58);           /* Golden Apricot in dark mode */
+  --primary-foreground: oklch(0.14 0.025 54);
+  --secondary: oklch(0.22 0.03 54);
+  --secondary-foreground: oklch(0.96 0.01 75);
+  --muted: oklch(0.22 0.03 54);
+  --muted-foreground: oklch(0.68 0.04 68);
+  --accent: oklch(0.52 0.13 54);
+  --accent-foreground: oklch(0.96 0.01 75);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.68 0.10 58);
+  --sidebar: oklch(0.15 0.025 54);
+  --sidebar-foreground: oklch(0.96 0.01 75);
+  --sidebar-primary: oklch(0.68 0.10 58);
+  --sidebar-primary-foreground: oklch(0.14 0.025 54);
+  --sidebar-accent: oklch(0.22 0.03 54);
+  --sidebar-accent-foreground: oklch(0.96 0.01 75);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.68 0.10 58);
+}
+
+/* ─── Base Layer ──────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Custom Utilities ────────────────────────────────────────────────────── */
+@utility text-heading {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@utility text-display {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+@utility section-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility gradient-warm {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
