@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 
 export default function Home() {
-  const whatsappUrl = "https://wa.me/628001234567?text=" + encodeURIComponent("Hi, saya tertarik dengan photobooth Photobin. Bisa info paket dan ketersediaan?");
+  const whatsappUrl = "https://wa.me/62895365518017?text=" + encodeURIComponent("Hi, saya tertarik dengan photobooth Noor Booth. Bisa info paket dan ketersediaan?");
 
   return (
     <>
@@ -45,7 +45,7 @@ export default function Home() {
         <section className="py-24 bg-primary text-primary-foreground text-center">
           <div className="section-container">
             <h2 className="text-4xl md:text-6xl font-bold mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
-              Ayo Foto Seru Bareng Photobin!
+              Ayo Foto Seru Bareng Noor Booth!
             </h2>
             <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto">
               Jangan lewatkan momen bahagia kamu tanpa kenangan fisik yang berkesan.

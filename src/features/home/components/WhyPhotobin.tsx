@@ -41,7 +41,7 @@ export default function WhyPhotobin() {
             className="text-4xl md:text-5xl font-bold mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Kenapa Pilih Photobin?
+            Kenapa Pilih Noor Booth?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Kami menghadirkan lebih dari sekadar kamera. Kami menghadirkan keceriaan instan di setiap lembar cetakan.

@@ -7,7 +7,7 @@ const reviews = [
   {
     name: "Sarah Wijaya",
     event: "Wedding Celebration",
-    text: "Photobin bener-bener buat acara saya jadi seru banget! Tamu-tamu pada antri dan hasilnya bagus banget. Unlimited print-nya beneran unlimited!",
+    text: "Noor Booth bener-bener buat acara saya jadi seru banget! Tamu-tamu pada antri dan hasilnya bagus banget. Unlimited print-nya beneran unlimited!",
     rating: 5
   },
   {
@@ -19,7 +19,7 @@ const reviews = [
   {
     name: "Jessica Putri",
     event: "Birthday Party",
-    text: "Puas banget sama Photobin! Propertinya lucu-lucu dan stiker HP-nya jadi rebutan. Definitively recommended untuk acara apapun.",
+    text: "Puas banget sama Noor Booth! Propertinya lucu-lucu dan stiker HP-nya jadi rebutan. Definitively recommended untuk acara apapun.",
     rating: 5
   }
 ];

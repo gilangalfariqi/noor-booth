@@ -35,7 +35,7 @@ export default function HowItWorks() {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Cara Kerja Photobin
+            Cara Kerja Noor Booth
           </h2>
           <p className="text-muted-foreground text-lg">Sesederhana senyum, secepat kilat hasilnya.</p>
         </div>

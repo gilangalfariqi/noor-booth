@@ -27,7 +27,7 @@ export default function AdminAuth({ onAuthenticated }: AdminAuthProps) {
       });
       const json = await res.json();
       if (res.ok && json.success) {
-        sessionStorage.setItem("photobin-admin", "authenticated");
+        sessionStorage.setItem("noorbooth-admin", "authenticated");
         onAuthenticated();
       } else {
         toast.error("Incorrect password. Please try again.");

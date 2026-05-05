@@ -71,9 +71,9 @@ export default function GalleryPreview() {
             </h2>
           </div>
 
-<Button variant="outline" className="flex items-center gap-2">
+          <Button variant="outline" className="flex items-center gap-2">
             <Link href="/portfolio">
-              View Full Portfolio
+              Lihat Semua Gallery
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>

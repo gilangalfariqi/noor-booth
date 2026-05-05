@@ -41,15 +41,19 @@ export default function Navbar() {
     >
       <div className="section-container">
         <nav className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Camera className="w-4 h-4 text-primary-foreground" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:scale-110 transition-transform">
+              <img 
+                src="/logo.jpeg" 
+                alt="Noor Booth Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span
-              className="text-heading text-xl text-foreground"
+              className="text-heading text-xl text-foreground font-bold tracking-tight"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
-              Photobin
+              Noor Booth
             </span>
           </Link>
 

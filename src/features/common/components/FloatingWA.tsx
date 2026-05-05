@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 export default function FloatingWA() {
-  const whatsappNumber = "628001234567";
-  const whatsappMessage = encodeURIComponent("Hi, saya tertarik dengan photobooth Photobin. Bisa info paket dan ketersediaan?");
+  const whatsappNumber = "62895365518017";
+  const whatsappMessage = encodeURIComponent("Hi, saya tertarik dengan photobooth Noor Booth. Bisa info paket dan ketersediaan?");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (

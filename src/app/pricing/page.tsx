@@ -133,7 +133,7 @@ export default function PricingPage() {
               yang disesuaikan dengan kebutuhan spesifik acara Anda.
             </p>
             <a
-              href="https://wa.me/628001234567"
+              href="https://wa.me/62895365518017"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-primary hover:underline"

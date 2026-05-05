@@ -19,32 +19,33 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Photobin — Professional Photography Studio",
-    template: "%s | Photobin",
+    default: "Noor Booth — Professional Photo Booth Service",
+    template: "%s | Noor Booth",
   },
   description:
-    "Capturing life's most precious moments. Professional photo booth services, premium merch, and custom stickers.",
+    "Membangun pengalaman photobooth yang seru dan merchandise custom berkualitas untuk setiap momen spesial Anda. @noorbooth.id",
   keywords: [
     "photo booth",
     "merch",
     "sticker",
     "custom stickers",
-    "photobin",
+    "noor booth",
+    "noor booth jakarta",
   ],
-  authors: [{ name: "Photobin Studio" }],
+  authors: [{ name: "Noor Booth" }],
   openGraph: {
     type: "website",
-    locale: "en_US",
-    title: "Photobin — Professional Photography Studio",
+    locale: "id_ID",
+    title: "Noor Booth — Professional Photo Booth Service",
     description:
-      "Capturing life's most precious moments. Professional photo booth services, premium merch, and custom stickers.",
-    siteName: "Photobin",
+      "Membangun pengalaman photobooth yang seru dan merchandise custom berkualitas untuk setiap momen spesial Anda.",
+    siteName: "Noor Booth",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Photobin — Professional Photography Studio",
+    title: "Noor Booth — Professional Photo Booth Service",
     description:
-      "Capturing life's most precious moments. Book your session today.",
+      "Membangun pengalaman photobooth yang seru dan merchandise custom berkualitas untuk setiap momen spesial Anda.",
   },
   robots: {
     index: true,

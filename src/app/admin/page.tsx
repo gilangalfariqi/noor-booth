@@ -17,7 +17,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     // Check session on mount
-    if (sessionStorage.getItem("photobin-admin") === "authenticated") {
+    if (sessionStorage.getItem("noorbooth-admin") === "authenticated") {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsAuthenticated(true);
     }
@@ -28,7 +28,7 @@ export default function AdminPage() {
   };
 
   const handleLogout = () => {
-    sessionStorage.removeItem("photobin-admin");
+    sessionStorage.removeItem("noorbooth-admin");
     setIsAuthenticated(false);
     setActiveTab("bookings");
   };
@@ -54,7 +54,7 @@ export default function AdminPage() {
                 className="font-semibold text-base"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                Photobin Admin
+                Noor Booth Admin
               </h1>
               <p className="text-xs text-muted-foreground">Dashboard</p>
             </div>

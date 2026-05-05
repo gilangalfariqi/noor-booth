@@ -28,7 +28,7 @@ const products = [
 ];
 
 export default function MerchShowcase() {
-  const whatsappUrl = "https://wa.me/628001234567?text=" + encodeURIComponent("Hi, saya tertarik untuk menambah paket merch (keychain/sticker) ke booking photobooth saya.");
+  const whatsappUrl = "https://wa.me/62895365518017?text=" + encodeURIComponent("Hi, saya tertarik untuk menambah paket merch (keychain/sticker) ke booking Noor Booth saya.");
 
   return (
     <section className="py-24 bg-white overflow-hidden">
