@@ -1,149 +1,118 @@
-# noor-booth - Professional Photography Studio 🚀
+# Noor Booth — Professional Photography Booking Web App 🚀
 
-Production-ready Next.js 16 photography booking website with Supabase backend.
+Production-ready **Next.js 16** photography booking website with **Supabase** (PostgreSQL + Storage).
 
-[![Vercel](https://thereadme.com/project-status/Deploy%20with%20Vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/noor-booth&env=NEXT_PUBLIC_SUPABASE_URL&env=NEXT_PUBLIC_SUPABASE_ANON_KEY&env=ADMIN_SECRET&project-name=noor-booth&repository-name=noor-booth)
+[![Deploy with Vercel](https://thereadme.com/project-status/Deploy%20with%20Vercel.svg)](https://vercel.com/new/clone)
 
 ## ✨ Features
 
-- **Modern UI/UX** - Tailwind + shadcn/ui + Framer Motion
-- **Full Booking System** - Form validation + rate limiting
-- **Portfolio Gallery** - Image upload + lightbox + categories
-- **Dynamic Pricing** - Admin CRUD
-- **Admin Dashboard** - Auth + bookings/packages/images management
-- **Supabase Integration** - PostgreSQL + Storage
-- **SEO Optimized** - Metadata + OpenGraph
-- **Production Ready** - Error boundaries + loading states + toasts
+- **Modern UI/UX**: Tailwind + shadcn/ui + Framer Motion
+- **Booking System**: form validation, rate limiting, and Supabase-backed submissions
+- **Portfolio Gallery**: categorized gallery with image upload and lightbox
+- **Dynamic Pricing**: admin-managed packages
+- **Admin Dashboard**: authentication + manage bookings, packages, and gallery images
+- **Supabase Integration**: PostgreSQL + Storage
+- **SEO Optimized**: metadata + OpenGraph
+- **Production Ready**: loading states, error handling, and user feedback
 
-## 🛠 Tech Stack
+## 🧰 Tech Stack
 
-```
+```txt
 Frontend: Next.js 16 (App Router) + TypeScript + TailwindCSS
 Backend: Next.js API Routes + Supabase (PostgreSQL + Storage)
 UI: shadcn/ui + Framer Motion + Lucide React
 Forms: React Hook Form + Zod
-Deployment: Vercel (free tier)
+Deployment: Vercel
 ```
 
 ## 🚀 Quick Start
 
-### 1. Clone & Install
+### 1) Clone & Install
+
 ```bash
 git clone <your-repo> noor-booth
 cd noor-booth
 npm install
 ```
 
-### 2. Environment Variables
-Copy `.env.example` to `.env.local`:
-```bash
-cp .env.example .env.local
-```
+### 2) Environment Variables
 
-### 3. Setup Supabase (5 minutes)
-1. [Create Supabase project](https://supabase.com/dashboard)
-2. Copy `NEXT_PUBLIC_SUPABASE_URL` & `NEXT_PUBLIC_SUPABASE_ANON_KEY` to `.env.local`
-3. Create storage bucket `gallery` (public access)
-4. Run SQL (Dashboard > SQL Editor):
+1. Create `.env.local` from `.env.example`.
+2. Set at minimum:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `ADMIN_SECRET` (server-side admin authentication secret)
 
-```sql
--- Bookings table
-CREATE TABLE bookings (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name TEXT NOT NULL,
-  date DATE NOT NULL,
-  package TEXT NOT NULL,
-  notes TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+> **Security note:** Do not commit `.env.local` or any secret values to GitHub.
 
--- Packages table  
-CREATE TABLE packages (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name TEXT NOT NULL,
-  price NUMERIC NOT NULL,
-  description TEXT NOT NULL,
-  features TEXT[],
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+### 3) Setup Supabase
 
--- Gallery table
-CREATE TABLE gallery (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  image_url TEXT NOT NULL,
-  category TEXT CHECK (category IN ('wedding', 'portrait', 'event', 'family')) NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+1. Create a Supabase project.
+2. Create a storage bucket named `gallery`.
+3. Run database schema SQL (see `supabase-setup.sql`).
 
--- Enable RLS (optional, allows public reads)
-ALTER TABLE bookings ENABLE ROW LEVEL SECURITY;
-ALTER TABLE packages ENABLE ROW LEVEL SECURITY;
-ALTER TABLE gallery ENABLE ROW LEVEL SECURITY;
+### 4) Development
 
-CREATE POLICY "Public read bookings" ON bookings FOR SELECT USING (true);
-CREATE POLICY "Public read packages" ON packages FOR SELECT USING (true);
-CREATE POLICY "Public read gallery" ON gallery FOR SELECT USING (true);
-
--- Insert sample packages
-INSERT INTO packages (name, price, description) VALUES
-('Essentials', 299, 'Perfect for small gatherings'),
-('Signature', 599, 'Comprehensive wedding coverage', ARRAY['8 hours', '300+ photos']),
-('Elite', 999, 'Luxury service with album');
-```
-
-### 4. Development
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000)
 
-**Admin:** [http://localhost:3000/admin](http://localhost:3000/admin)  
-**Password:** `` (change `ADMIN_SECRET` in `.env.local`)
+Open: http://localhost:3000
 
-### 5. Deploy to Vercel (Free!)
-1. Push to GitHub
-2. [Import to Vercel](https://vercel.com/new)
-3. Add env vars: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ADMIN_SECRET`
-4. Deploy! ✅
+Admin panel: http://localhost:3000/admin
 
-## 📱 Pages & Features
+### 5) Deploy to Vercel
 
-| Page | Features |
-|------|----------|
-| `/` | Hero, Services, Gallery preview, Testimonials, CTA |
+1. Push to GitHub.
+2. Import the project into Vercel.
+3. Configure environment variables in Vercel:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `ADMIN_SECRET`
+4. Deploy.
+
+## 📚 Pages
+
+| Route | Purpose |
+|------|---------|
+| `/` | Landing page (hero, services, gallery preview, CTA) |
 | `/portfolio` | Filterable gallery + lightbox |
-| `/pricing` | Dynamic pricing cards |
-| `/booking` | Form + validation + submission |
-| `/admin` | Auth + tabs: Bookings/Packages/Images/Settings |
+| `/pricing` | Pricing/packages |
+| `/booking` | Booking form (validation + submit) |
+| `/admin` | Admin dashboard (bookings, packages, gallery, settings) |
 
-## 🔐 Admin Password
-Default: ``  
-Change `ADMIN_SECRET=your-secret` in `.env.local` or Vercel dashboard.
+## 🔐 Admin Access
 
-## 🗄 Database Schema
-See SQL above. Tables: `bookings`, `packages`, `gallery`. Bucket: `gallery`.
+Admin authentication is protected using `ADMIN_SECRET`.
 
-## 🎨 Customization
-- **Colors**: Edit `tailwind.config.ts`
-- **Content**: Static content in components
-- **Images**: Upload via admin to Supabase Storage
-- **Fonts**: Playfair Display + Inter (Google Fonts)
+- Change `ADMIN_SECRET` immediately after setup.
+- Never expose `ADMIN_SECRET` in client-side code.
 
-## 🧪 Testing
+## 🗄️ Database Schema
+
+The schema is maintained in `supabase-setup.sql`.
+
+## 🧩 Customization
+
+- UI content/components: under `src/`
+- Gallery bucket name & categories: managed via Supabase configuration/policies
+
+## 🧪 Testing & Checks
+
 ```bash
 npm run build && npm start
 npm run lint
 ```
 
-## 📦 Production Checklist
+## ✅ Production Checklist
+
 - [ ] Supabase tables created
-- [ ] `.env` vars set
-- [ ] Admin password changed
-- [ ] Custom domain (Vercel)
-- [ ] Analytics (Vercel)
+- [ ] Storage bucket configured
+- [ ] RLS policies verified
+- [ ] `ADMIN_SECRET` set
+- [ ] Deployment environment variables set in Vercel
 
----
+## 📄 License
 
-⭐ **Star on GitHub if helpful!**  
-📢 **Deploy in 5 mins →** [Vercel](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/noor-booth)
+See `LICENSE` file in this repository.
 

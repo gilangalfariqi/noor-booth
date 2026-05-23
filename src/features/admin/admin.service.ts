@@ -9,6 +9,7 @@ export async function getBookings() {
 
 export async function adminLogin(password: string) {
   // Current is client-side, service can validate via API later
-  if (password === process.env.NEXT_PUBLIC_ADMIN_PASS || 'admin123') return true;
-  throw new Error('Invalid password');
+  // Never ship secrets or default passwords to the client.
+  // Actual authentication must be enforced server-side (see API route handlers).
+  throw new Error('Admin authentication is not supported from the client.');
 }

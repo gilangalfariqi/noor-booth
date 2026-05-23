@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const ADMIN_PASSWORD = "admin123"; // Change this in production
+// Server-side admin password must come from environment variables.
+// This file intentionally never hard-codes secrets.
+const ADMIN_PASSWORD = process.env.ADMIN_SECRET ?? "";
 
 export async function POST(request: NextRequest) {
   try {
